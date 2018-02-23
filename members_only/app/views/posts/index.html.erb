@@ -1,0 +1,14 @@
+<h1>The Gossip Vine.</h1>
+
+<% @post.each do |post|%>
+<div>
+<%= post.title %></br></br>
+<%= post.body %></br>
+  <% if @current_user %>
+    <%="Author: #{User.find_by(id: post.user_id).name}" %>
+    <% else %>
+    <%= "Author: Hidden" %>
+  <% end %>
+</div>
+  </br></br>
+<% end %>

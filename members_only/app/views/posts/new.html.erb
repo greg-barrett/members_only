@@ -1,0 +1,10 @@
+<h1>Submit your secrets below!</h1>
+
+<%= form_for @post do |f| %>
+<%=f.label :title %></br>
+<%=f.text_field :title %></br>
+<%=f.label :body %></br>
+<%=f.text_field :body %></br>
+<%= hidden_field_tag :user_id, @current_user.id %></br>
+<%= f.submit %>
+<% end %>
